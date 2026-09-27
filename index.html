@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradeback — Know exactly where you stand</title>
+<meta name="description" content="Track your scores, set a target, and see exactly what you need to hit it.">
+
+<!-- Apply saved theme before first paint to avoid flash -->
+<script>
+  (function () {
+    var saved = localStorage.getItem('gradeback_theme');
+    if (saved === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          page:    '#FAFAFA',
+          surface: '#FFFFFF',
+          ink:     '#0A0A0A',
+          body:    '#525252',
+
+          darkpage:    '#0A0A0A',
+          darksurface: '#141414',
+          darkink:     '#F5F5F5',
+          darkbody:    '#A3A3A3',
+
+          brand:   '#4F0FE8',
+          accent:  '#8B5CF6',
+        },
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .focus-ring:focus-visible {
+    outline: 2px solid #4F0FE8;
+    outline-offset: 2px;
+  }
+  .dark .focus-ring:focus-visible {
+    outline: 2px solid #8B5CF6;
+  }
+</style>
+</head>
+
+<body class="bg-page dark:bg-darkpage text-ink dark:text-darkink antialiased transition-colors duration-300">
+
+  <!-- Nav -->
+  <header>
+    <div class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
+      <span class="text-lg font-semibold tracking-tight">GradeBack</span>
+      <a href="https://gradebackapp.vercel.app#/login" class="text-sm text-body dark:text-darkbody hover:text-ink dark:hover:text-darkink transition-colors focus-ring rounded">
+        Sign in
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-24 sm:pt-24 sm:pb-32 text-center">
+    <h1 class="text-5xl sm:text-6xl font-bold tracking-tight leading-[1.05] max-w-3xl mx-auto">
+      Know exactly where you stand.
+    </h1>
+    <p class="mt-6 text-lg text-body dark:text-darkbody max-w-xl mx-auto">
+      Track your scores. Set a target. See what you need.
+    </p>
+    <div class="mt-10">
+      <a
+        href="https://gradebackapp.vercel.app#/signup"
+        class="inline-flex items-center gap-2 rounded-full bg-ink text-white dark:bg-accent dark:text-ink px-7 py-3.5 text-sm font-medium hover:opacity-90 transition-opacity focus-ring"
+      >
+        Get started
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="max-w-5xl mx-auto px-6 pb-24 sm:pb-32">
+    <div class="grid sm:grid-cols-3 gap-3">
+
+      <div class="rounded-2xl bg-surface dark:bg-darksurface p-5">
+        <div class="w-9 h-9 rounded-lg bg-page dark:bg-darkpage flex items-center justify-center mb-4">
+          <i data-lucide="book-open" class="w-4 h-4 text-brand dark:text-accent"></i>
+        </div>
+        <h3 class="font-semibold text-[15px] mb-1.5">Add your courses</h3>
+        <p class="text-sm text-body dark:text-darkbody leading-relaxed">
+          Set a target and total marks for each one.
+        </p>
+      </div>
+
+      <div class="rounded-2xl bg-surface dark:bg-darksurface p-5">
+        <div class="w-9 h-9 rounded-lg bg-page dark:bg-darkpage flex items-center justify-center mb-4">
+          <i data-lucide="plus-circle" class="w-4 h-4 text-brand dark:text-accent"></i>
+        </div>
+        <h3 class="font-semibold text-[15px] mb-1.5">Log your scores</h3>
+        <p class="text-sm text-body dark:text-darkbody leading-relaxed">
+          Add each quiz, assignment, and exam as you get it.
+        </p>
+      </div>
+
+      <div class="rounded-2xl bg-surface dark:bg-darksurface p-5">
+        <div class="w-9 h-9 rounded-lg bg-page dark:bg-darkpage flex items-center justify-center mb-4">
+          <i data-lucide="target" class="w-4 h-4 text-brand dark:text-accent"></i>
+        </div>
+        <h3 class="font-semibold text-[15px] mb-1.5">See what you need</h3>
+        <p class="text-sm text-body dark:text-darkbody leading-relaxed">
+          Gradeback tells you the marks left to hit your target.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="max-w-5xl mx-auto px-6 pb-24 sm:pb-32 text-center">
+    <p class="text-2xl sm:text-3xl font-semibold tracking-tight max-w-2xl mx-auto leading-snug">
+      No guesswork. Know where you stand.
+    </p>
+    <div class="mt-8">
+      <a
+        href="https://gradebackapp.vercel.app#/signup"
+        class="inline-flex items-center gap-2 rounded-full bg-ink text-white dark:bg-accent dark:text-ink px-7 py-3.5 text-sm font-medium hover:opacity-90 transition-opacity focus-ring"
+      >
+        Create your free account
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="max-w-5xl mx-auto px-6 py-10 text-center">
+      <p class="text-sm text-body dark:text-darkbody">Made for students</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
